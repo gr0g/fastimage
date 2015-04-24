@@ -84,6 +84,11 @@ class FastImage
 	{
         $this->transport->resetReadPointer();
 
+        if (!$this->type)
+        {
+            $this->type = 'jpeg';
+        }
+
 		if ($this->getType())
 		{
 			return array_values($this->parseSize());
