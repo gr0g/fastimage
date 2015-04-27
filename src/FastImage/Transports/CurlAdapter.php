@@ -202,7 +202,14 @@ class CurlAdapter implements TransportInterface {
         $range_end = $range_start + $this->range;
 
         return array(
-            "Range: bytes=$range_start-$range_end"
+            "Range: bytes=$range_start-$range_end",
+            "Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5",
+            "Cache-Control: max-age=0",
+            "Connection: keep-alive",
+            "Keep-Alive: 300",
+            "Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7",
+            "Accept-Language: en-us,en;q=0.5",
+            "Pragma: ", // browsers keep this blank.
         );
     }
 
@@ -222,7 +229,6 @@ class CurlAdapter implements TransportInterface {
         curl_setopt($handle, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($handle, CURLOPT_CONNECTTIMEOUT, $this->timeout);
         curl_setopt($handle, CURLOPT_TIMEOUT, $this->timeout);
-
         return $handle;
     }
 
