@@ -229,6 +229,13 @@ class CurlAdapter implements TransportInterface {
         curl_setopt($handle, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($handle, CURLOPT_CONNECTTIMEOUT, $this->timeout);
         curl_setopt($handle, CURLOPT_TIMEOUT, $this->timeout);
+        
+        #  Some web servers require the useragent to be not a bot. So we are liars.
+        curl_setopt($handle, CURLOPT_USERAGENT, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.110 Safari/537.36');
+
+        # Honestly don't remember why we do this
+        curl_setopt($ch, CURLOPT_ENCODING, "");
+        
         return $handle;
     }
 
