@@ -1,19 +1,19 @@
 {
-		"name": "fastimage/fastimage",
-		"description":"FastImage finds the size or type of an image given its uri by fetching as little as needed, ported by ",
-		"type": "library",
-		"keywords": [
-				"fastimage",
-				"image size",
-				"ruby port"
-		],
-		"homepage": "https://github.com/sdsykes/fastimage",
-		"license": "MIT",
-		"description": "Fastimage",
-		"require": {
-				"php": ">=5.3.0"
-		},
-		"autoload": {
-			"classmap": ["/"]
-		}
+    "name": "fastimage/fastimage",
+    "description":"FastImage finds the size or type of an image given its uri by fetching as little as needed, ported by Tom Moor.",
+    "type": "library",
+    "keywords": [
+        "fastimage",
+        "image size",
+        "ruby port"
+    ],
+    "github": "https://github.com/pinleague/fastimage",
+    "homepage": "https://github.com/sdsykes/fastimage",
+    "license": "MIT",
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "autoload": {
+        "classmap": ["src"]
+    }
 }
